@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Companion = () => {
+export default function Companion(){
   return (
     <div>Companion</div>
   )
