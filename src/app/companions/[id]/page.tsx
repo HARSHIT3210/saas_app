@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getSubjectColor } from "@/lib/utils";
 import Image from "next/image";
 import { getCompanion } from "@/lib/actions/companion.action";
+import ComapnionComponent from "@/components/ComapnionComponent";
 
 interface CompanionSessionPageProps {
   params: Promise<{ id: string }>;
@@ -13,7 +14,7 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
   const companion = await getCompanion(id);
   const user = await currentUser();
 
-  console.log("ASHDHHS",companion)
+  console.log("ASHDHHS", companion);
 
   const { name, subject, title, topic, duration } = companion;
 
@@ -21,7 +22,7 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
   if (!name) redirect("/companions");
 
   return (
-    <main>
+    <main >
       <article className="flex rounded-border justify-between p-6 max-md:flex-col">
         <div className="flex items-center gap-2">
           <div
@@ -48,13 +49,12 @@ const CompanionSession = async ({ params }: CompanionSessionPageProps) => {
           {duration} minutes
         </div>
       </article>
-
-      {/* <CompanionComponent
+      <ComapnionComponent
         {...companion}
         companionId={id}
         userName={user.firstName!}
         userImage={user.imageUrl!}
-      /> */}
+      />
     </main>
   );
 };

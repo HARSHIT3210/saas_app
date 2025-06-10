@@ -16,7 +16,7 @@ export default async function CompanionsLibrary({
   console.log("Companions:", companions);
 
   return (
-    <main>
+     <main className="bg-[#f08229] rounded-2xl">
       <section className="flex justify-between gap-4 max-sm:flex-col">
         <h1>Companion Libray</h1>
         <div className="flex gap-4">
