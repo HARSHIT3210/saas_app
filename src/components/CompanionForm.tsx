@@ -24,6 +24,7 @@ import { subjects } from "@/constants";
 import { Textarea } from "@/components/ui/textarea";
 import { redirect } from "next/navigation";
 import { createCompanion } from "@/lib/actions/companion.action";
+import { toast } from "sonner";
 
 const formSchema = z.object({
   name: z.string().min(1, { message: "Companion is required." }),
@@ -51,8 +52,10 @@ const CompanionForm = () => {
     const companion = await createCompanion(values);
 
     if (companion) {
+      toast.success("Companion created successfully!");
       redirect(`/companions/${companion.id}`);
     } else {
+      toast.error("Failed to create a companion.");
       console.log("Failed to create a companion");
       redirect("/");
     }

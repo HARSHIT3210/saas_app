@@ -13,10 +13,9 @@ export default async function CompanionsLibrary({
   const topic = filters.topic ? filters.topic : "";
 
   const companions = await getAllCompanions({ subject, topic });
-  console.log("Companions:", companions);
 
   return (
-     <main className="bg-[#f08229] rounded-2xl">
+    <main className="bg-[#f08229] rounded-2xl">
       <section className="flex justify-between gap-4 max-sm:flex-col">
         <h1>Companion Libray</h1>
         <div className="flex gap-4">
