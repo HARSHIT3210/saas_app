@@ -13,7 +13,7 @@ const Page = async () => {
   const recentSessions = await getRecentSessions();
 
   return (
-    <main>
+    <main className="bg-purple-400 border border-black w-[80%] mb-5 rounded-4xl mt-5">
       <div>
         <h1 className="text-4x font-semibold">Popular Companions</h1>
         

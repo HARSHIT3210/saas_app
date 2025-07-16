@@ -22,7 +22,7 @@ const Profile = async () => {
   const sessionHistory = await getUserSessions(user?.id);
 
   return (
-    <main className="min-lg:w-3/4">
+    <main className="bg-orange-300 border border-black w-[80%] mb-5 rounded-4xl mt-5 ">
       <section className="flex justify-between gap-4 max-sm:flex-col items-center">
         <div className="flex gap-4 items-center">
           <Image
