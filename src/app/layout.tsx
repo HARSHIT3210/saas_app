@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Raleway } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
 
-const bricolage = Raleway({
-  subsets: ["latin"],
-  preload: true,
+const bricolage = Poppins({
+  weight: "300",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export default function RootLayout({
       <body className={`${bricolage.className} antialiased`}>
         <ClerkProvider appearance={{ variables: { colorPrimary: "#fe5933" } }}>
           <Navbar />
-          <Toaster/>
+          <Toaster />
           {children}
         </ClerkProvider>
       </body>

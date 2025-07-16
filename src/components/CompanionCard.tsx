@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 interface CompanionCardProps {
   id: string;
@@ -22,7 +24,7 @@ const CompanionCard = ({
   return (
     <article className="companion-card" style={{ backgroundColor: color }}>
       <div className="flex justify-between items-center">
-        <div className="subject-badge">{subject}</div>
+        <Badge variant={"secondary"}>{subject}</Badge>
       </div>
 
       <h2 className="text-2xl font-bold">{name}</h2>
@@ -37,11 +39,11 @@ const CompanionCard = ({
         <p className="text-sm">{duration} minutes</p>
       </div>
 
-      <Link href={`/companions/${id}`} className="w-full">
-        <button className="btn-primary w-full justify-center">
+      <Button className="btn-primary w-full justify-center">
+        <Link href={`/companions/${id}`} className="w-full">
           Launch Lesson
-        </button>
-      </Link>
+        </Link>
+      </Button>
     </article>
   );
 };
